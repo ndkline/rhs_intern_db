@@ -1,0 +1,181 @@
+<!---<cfquery datasource="travelAdv">
+select *
+from tours
+</cfquery>--->
+
+<!---<cfquery datasource="travelAdv">
+INSERT tourname, tourdescription, totaldays, mealsincluded, countryid
+INTO tours
+WHERE #form.tourname#
+</cfquery--->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Travel Adventures</title>
+<link href="styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="wrapper">
+  	<!---<cfinclude template="header.cfm">
+	<div id="navbar">
+      <a href="index.php">home</a> <a href="tours.php">tours</a> <a href="countries.php">countries</a> <a href="aboutUs.php">about us</a> <a href="contactUs.php">contact us</a> <a href="search.php">search</a>
+  	</div>--->
+  	<div id="content">
+       	<h1>Insert a New Internship</h1>
+       	<p>Use the form below to insert a new Internship into the RHS internship database.    </p>
+       	<cfform name="insertinternship" id="insertinternship">
+       	  <fieldset>
+       	    <p>
+       	      <label for="ID"> Record ID Number:<cfoutput>#qInternships.ID#</cfoutput></label>
+       	      <br />
+       	     
+   	        </p>
+       	    <p>
+       	      <label for="Facility">Agency<br />
+   	          </label>
+       	      <cfinput type="text" name="Facility" message="Please enter an Agency name" validateat="OnSubmit" required="yes" id="Facility"  value="#qInternships.Facility#" size = "100" maxlength = "255" >
+   	        </p>
+       	    <p>
+       	      <label for="Street">Street</label>
+       	      <br />
+       	      <cfinput type="text" name="Street" message="Please enter the street where the agency is located." validateat="onSubmit" required="yes" id="Street" value="#qInternships.Street#" size="50" maxlength="255"> 
+   	        </p>
+       	    <p>
+       	      <label for="City">City</label>
+       	      <br />
+       	      <cfinput type="text" name="City" message="Please enter the City where the agency is located." validateat="onSubmit" validate="noblanks" required="yes" id="City" value="#qInternships.City#" size="50" maxlength="255">
+   	        </p>
+       	    <p>
+       	      <label for="State">State</label>
+       	      <br />
+			  <cfinput type="text" name="State" message="Please enter the state where the agency is located." validateat="onSubmit" required="yes" value="#qInternships.State#" size="3">
+   	        </p>
+   	        <p>
+       	      <label for="Zip">Zip</label>
+       	      <br />
+       	      <cfinput type="text" name="ID" message="Please enter a zipcode where the agency is located." validateat="onSubmit" required="yes" id="Zip" value="#qInternships.Zip#" size="5" maxlength="10">
+   	        </p>
+       	    <p>
+       	      <label for="County">County<br />
+   	          </label>
+       	      <cfinput name="County" required="yes" validateat="OnSubmit" message="Please enter the county where the agency is located" value="#qInternships.County#">
+   	        </p>
+       	    <p>
+       	      <label for="Phone">Phone</label>
+       	      <br />
+       	      <cfinput type="text" name="Phone" message="Please enter the phone number for the agency." validateat="onSubmit" required="yes" id="Phone" value="#qInternships.Phone#" size="12" maxlength="12"> 
+   	        </p>
+       	    <p>
+       	      <label for="Email">Email</label>
+       	      <br />
+       	      <cfinput type="text" name="Email" message="Please enter the email address for the agency." validateat="onSubmit" required="yes" id="Email" value="#qInternships.Email#" size="50" maxlength="50">
+   	        </p>
+       	    <p>
+       	      <label for="URL">URL:</label>
+       	      <br />
+			  <cfinput type="text" name="URL" message="Please enter the URL for the agency's web page." validateat="onSubmit" required="no" value="#qInternships.URL#" size="50">
+   	        </p>
+   	        <p>
+       	      <label for="Description">Description<br />
+   	          </label>
+       	      <cftextarea name="Description" cols="55" rows="4" label="Description" required="yes" validateat="OnSubmit" message="Please enter an internship description" enabled="no"><cfoutput>#qInternships.Description#</cfoutput></cftextarea>
+   	        </p>
+   	       
+   	        
+   	        
+   	       <table >
+   	        	
+   	      
+<TR>
+<TD><p>Adolescents:<INPUT type="checkbox" id=checkboxAdolescents name=Adolescents value="1" <cfif #qInternships.Adolescents# is "True" >checked </cfif>/></p></TD>
+   	        <TD><p>MH:<INPUT type="checkbox" id=checkboxMH name=MH value="1" <cfif #qInternships.MH# is "True" >checked </cfif>/></p></TD>
+   	        <TD><p>MR:<INPUT type="checkbox" id=checkboxMR name=MR value="1" <cfif #qInternships.MR# is "True" >checked </cfif>/></p></TD>
+   	        <TD><p>D/A:<INPUT type="checkbox" id=checkboxD_A name=D_A value="1" <cfif #qInternships.D_A# is "True" >checked </cfif>/></p></TD>
+   	        <TD><p>Children:<INPUT type="checkbox" id=checkboxChildren name=Children value="1" <cfif #qInternships.Children# is "True" >checked </cfif>/></p></TD>
+   	        <TD><p>Corrections:<INPUT type="checkbox" id=checkboxCorrections name=Corerctions value="1" <cfif #qInternships.Corrections# is "True" >checked </cfif>/></p></TD>
+   	        <TD><p>Student:<INPUT type="checkbox" id=checkboxStudent name=Student value="1" <cfif #qInternships.Student# is "True" >checked </cfif>/></p></TD>
+   	        <TD><p>Elderly:<INPUT type="checkbox" id=checkboxElderly name=Elderly value="1" <cfif #qInternships.Elderly# is "True" >checked </cfif>/></p></TD>
+</TR>
+
+   	        	
+   	        </table>
+   	         <table >
+   	        	
+   	        
+<TR>   	        <TD><p>VI:<INPUT type="checkbox" id=checkboxVI name=VI value="1" <cfif #qInternships.VI# is "True" >checked </cfif>/></p></TD>
+   	        <TD><p>Rehab:<INPUT type="checkbox" id=checkboxRehab name=Rehab value="1" <cfif #qInternships.Rehab# is "True" >checked </cfif>/></p></TD>
+   	        <TD><p>Adult:<INPUT type="checkbox" id=checkboxAdult name=Adult value="1" <cfif #qInternships.Adult# is "True" >checked </cfif>/></p></TD>
+   	        <TD><p>OT_PT:<INPUT type="checkbox" id=checkboxOT_PT name=OT_PT value="1" <cfif #qInternships.OT_PT# is "True" >checked </cfif>/></p></TD>
+   	        <TD><p>Women:<INPUT type="checkbox" id=checkboxWomen name=Women value="1" <cfif #qInternships.Women# is "True" >checked </cfif>/></p></TD>
+   	        <TD><p>Family:<INPUT type="checkbox" id=checkboxFamily name=Family value="1" <cfif #qInternships.Family# is "True" >checked </cfif>/></p></TD>
+   	        <TD><p>Voc:<INPUT type="checkbox" id=checkboxVoc name=Voc value="1" <cfif #qInternships.Voc# is "True" >checked </cfif>/></p></TD>
+</TR>
+</table>
+<table >
+
+<tr>
+	
+</tr> <TR> 	        <TD><p>BV:<INPUT type="checkbox" id=checkboxBV name=BV value="1" <cfif #qInternships.BV# is "True" >checked </cfif>/></p></TD>
+   	        <TD><p>Alternative_Education:<INPUT type="checkbox" id=checkboxAlternative_Education name=Alternative_Education value="1" <cfif #qInternships.Alternative_Education# is "True" >checked </cfif>/></p></TD>
+   	        <TD><p>Private:<INPUT type="checkbox" id=checkboxPrivate name=Private value="1" <cfif #qInternships.Private# is "True" >checked </cfif>/></p></TD>
+   	        <TD><p>Neuro:<INPUT type="checkbox" id=checkboxNeuro name=Neuro value="1" <cfif #qInternships.Neuro# is "True" >checked </cfif>/></p></TD>
+   	        <TD><p>CP:<INPUT type="checkbox" id=checkboxCP name=CP value="1" <cfif #qInternships.CP# is "True" >checked </cfif>/></p></TD>
+   	        <TD><p>Counseling:<INPUT type="checkbox" id=checkboxCounseling name=Counseling value="1" <cfif #qInternships.Counseling# is "True" >checked </cfif>/></p></TD>
+   	        <TD><p>physical:<INPUT type="checkbox" id=checkboxphysical name=physical value="1" <cfif #qInternships.physical# is "True" >checked </cfif>/></p></TD>
+</TR>
+</table>
+   	        
+   	        
+
+
+   	                      
+   	        
+   	        
+   	        
+   	        
+       	    <p>
+       	      <cfinput type="submit" name="updateInternship" value="Update internship" id="submit">
+   	        </p>
+   	      </fieldset>
+   	  </cfform></p>
+      <cfif IsDefined("FORM.insertTour")>
+  <cfquery datasource="travelAdv">
+INSERT INTO tours (tourname, tourdescription, totaldays, countryid, mealsincluded)
+VALUES (<cfif IsDefined("FORM.tourname") AND #FORM.tourname# NEQ "">
+<cfqueryparam value="#FORM.tourName#" cfsqltype="cf_sql_varchar" maxlength="60">
+<cfelse>
+''
+</cfif>
+, <cfif IsDefined("FORM.tourdescription") AND #FORM.tourdescription# NEQ "">
+<cfqueryparam value="#FORM.tourdescription#" cfsqltype="cf_sql_varchar" maxlength="255">
+<cfelse>
+''
+</cfif>
+, <cfif IsDefined("FORM.totaldays") AND #FORM.totaldays# NEQ "">
+<cfqueryparam value="#FORM.totaldays#" cfsqltype="cf_sql_integer" maxlength="10">
+<cfelse>
+''
+</cfif>
+, <cfif IsDefined("FORM.countryid") AND #FORM.countryid# NEQ "">
+<cfqueryparam value="#FORM.countryid#" cfsqltype="cf_sql_integer" maxlength="10">
+<cfelse>
+''
+</cfif>
+, <cfif IsDefined("FORM.mealsincluded") AND #FORM.mealsincluded# NEQ "">
+<cfqueryparam value="#FORM.mealsincluded#" cfsqltype="cf_sql_varchar" maxlength="10">
+<cfelse>
+''
+</cfif>
+)
+</cfquery>
+  <cflocation url="toursUpdate.cfm">
+</cfif>
+
+</div>
+  	<cfinclude template="footer.cfm">
+</div>
+</body>
+</html>
