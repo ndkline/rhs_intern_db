@@ -5,6 +5,29 @@
     WHERE ID = #url.ID#
     </cfquery>
 
+<cfparam default= "0" name="form.Adolescents" type="integer" >
+<cfparam default= "0" name="form.MH" type="integer" >
+<cfparam default= "0" name="form.MR" type="integer" >
+<cfparam default= "0" name="form.D_A" type="integer" >
+<cfparam default= "0" name="form.Children" type="integer" >
+<cfparam default= "0" name="form.Corrections"  type="integer" >
+<cfparam default= "0" name="form.Student" type="integer" >
+<cfparam default= "0" name="form.Elderly" type="integer" >
+<cfparam default= "0" name="form.VI" type="integer" >
+<cfparam default= "0" name="form.Rehab" type="integer" >
+<cfparam default= "0" name="form.Adult" type="integer" >
+<cfparam default= "0" name="form.OT_PT" type="integer" >
+<cfparam default= "0" name="form.Women" type="integer" >
+<cfparam default= "0" name="form.Family" type="integer" >
+<cfparam default= "0" name="form.Voc" type="integer" >
+<cfparam default= "0" name="form.BV" type="integer" >
+<cfparam default= "0" name="form.Alternative_Education" type="integer" >
+<cfparam default= "0" name="form.Private" type="integer" >
+<cfparam default= "0" name="form.Neuro" type="integer" >
+<cfparam default= "0" name="form.CP" type="integer" >
+<cfparam default= "0" name="form.Counseling" type="integer" >
+<cfparam default= "0" name="form.physical" type="integer" >
+<cfparam default= "" name="form.Description" type="string" >
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -17,9 +40,10 @@
 <div id="wrapper">
     <div id="content">
         <h1>Update an Internship</h1>
-        <p>Use the form below to update the&nbsp;RHS internshipship information. This form is specifically for updating existing internships. To add a new internship, go to the <a href="internshipInsert.cfm">internships Insert page</a>.</p>
+        <p>Use the form below to update the&nbsp;RHS internship information. This form is specifically for updating existing internships. To add a new internship, go to the <a href="internshipInsert.cfm">internships Insert page</a>.</p>
         <cfform name="insertinternship" id="insertinternship">
             <fieldset>
+                <p>Record ID Number:<cfoutput>#qInternships.ID#</cfoutput></p> 
                 <p>
                     <label for="Agency"><b> <font size="4">&nbsp;<font color="crimson">*</font></font> </b>Agency:<br />
                     </label>
@@ -165,14 +189,14 @@
 				UPDATE intern
 				SET Facility = <cfqueryparam  value="#form.Facility#" CFSQLType="CF_SQL_VARCHAR">,
 					Street = <cfqueryparam  value="#form.Street#" CFSQLType="CF_SQL_VARCHAR">, 
-					City = <cfqueryparam  value="#form.City#" CFSQLType="CF_SQL_VARCHAR">
+					City = <cfqueryparam  value="#form.City#" CFSQLType="CF_SQL_VARCHAR">,
 					State = <cfqueryparam  value="#form.State#" CFSQLType="CF_SQL_VARCHAR">,
 					Zip = <cfqueryparam  value="#form.Zip#" CFSQLType="CF_SQL_VARCHAR">, 
 					County = <cfqueryparam  value="#form.County#" CFSQLType="CF_SQL_VARCHAR">, 
-					Phone = <cfqueryparam  value="#form.Phone#" CFSQLType="CF_SQL_VARCHAR">
+					Phone = <cfqueryparam  value="#form.Phone#" CFSQLType="CF_SQL_VARCHAR">,
 					Email = <cfqueryparam  value="#form.Email#" CFSQLType="CF_SQL_VARCHAR">,
 					Description = <cfqueryparam  value="#form.Description#" CFSQLType="CF_SQL_VARCHAR">, 
-					Supervisor = <cfqueryparam  value="#form.Supervisor#" CFSQLType="CF_SQL_VARCHAR">
+					Supervisor = <cfqueryparam  value="#form.Supervisor#" CFSQLType="CF_SQL_VARCHAR">,
 					Adolescents = <cfqueryparam value="#form.Adolescents#" CFSQLType="cf_sql_bit" >,
 					MH = <cfqueryparam value="#form.MH#" CFSQLType="cf_sql_bit" >,
 					MR = <cfqueryparam value="#form.MR#" CFSQLType="cf_sql_bit" >,
@@ -192,8 +216,8 @@
 					Alternative_Education = <cfqueryparam value="#form.Alternative_Education#" CFSQLType="cf_sql_bit" >,
 					Private = <cfqueryparam value="#form.Private#" CFSQLType="cf_sql_bit" >,
 					Neuro = <cfqueryparam value="#form.Neuro#" CFSQLType="cf_sql_bit" >,
-					CP = <cfqueryparam value="#form.CP#" CFSQLType="cf_sql_bit" >
-					Counseling = <cfqueryparam value="#form.Counseling#" CFSQLType="cf_sql_bit" >
+					CP = <cfqueryparam value="#form.CP#" CFSQLType="cf_sql_bit" >,
+					Counseling = <cfqueryparam value="#form.Counseling#" CFSQLType="cf_sql_bit" >,
 					physical = <cfqueryparam value="#form.physical#" CFSQLType="cf_sql_bit" >
 				WHERE ID = <cfqueryparam  value="#url.ID#" CFSQLType="CF_SQL_INTEGER">
 				

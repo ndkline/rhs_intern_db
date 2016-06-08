@@ -1,4 +1,4 @@
-<cfparam  default= 0 name="form.Adolescents" type="integer" >
+<cfparam default= "0" name="form.Adolescents" type="integer" >
 <cfparam default= "0" name="form.MH" type="integer" >
 <cfparam default= "0" name="form.MR" type="integer" >
 <cfparam default= "0" name="form.D_A" type="integer" >
@@ -30,16 +30,12 @@
 </head>
 
 <body>
-<div id="wrapper"> 
+<div id="wrapper">
     <div id="content">
         <h1>Insert a New Internship</h1>
-        <p>Use the form below to insert a new Internship into the RHS internship database. To edit or delete an existing internship, <a href="internshipListing.cfm">click here.</a>
-				</p>
-        <p>
-        	<font color="red">* = Mandatory Fields&nbsp;</font>
-        </p>
+        <p>Use the form below to insert a new Internship into the RHS internship database. To edit or delete an existing internship, <a href="internshipListing.cfm">click here.</a> </p>
+        <p> <font color="red">* = Mandatory Fields&nbsp;</font> </p>
         <cfform name="insertinternship" id="insertinternship" method = "post"    >
-        	
             <fieldset>
                 <p>
                     <label for="Facility"><font color ="red">*</font> Agency<br />
@@ -89,7 +85,7 @@
                 <p>
                     <label for="supervisor"><font color ="red">*</font>Supervisor:</label>
                     <br />
-                    <cfinput type="text" name="supervisor" message="Please enter the Supervior for the internship." validateat="onSubmit" required="yes" size="50">
+                    <cfinput type="text" name="supervisor" message="Please enter the Supervisor for the internship." validateat="onSubmit" required="yes" size="50">
                 </p>
                 <p>
                     <label for="Description">Description<br />
@@ -99,57 +95,54 @@
                 <table >
                     <tr>
                         <td><p>Adolescents:
-                                <cfinput type="checkbox" id="checkboxAdolescents" name="Adolescents"   value="1" /> 
-                        </p></td>
+                                <cfinput type="checkbox" id="checkboxAdolescents" name="Adolescents"   value="1" />
+                            </p></td>
                         <td><p>MH:
-                        <cfinput name="MH" type="checkbox"  value="1" id=checkboxMH>
-                               
-                        </p></td>
+                                <cfinput name="MH" type="checkbox"  value="1" id=checkboxMH>
+                            </p></td>
                         <td><p>MR:
                                 <cfinput type="checkbox" id="checkboxMR" name="MR" value="1"  />
-                        </p></td>
-                        
-                        
+                            </p></td>
                         <td><p>D/A:
                                 <cfinput type="checkbox" id="checkboxD_A" name="D_A" value="1"  />
-                        </p></td>
+                            </p></td>
                         <td><p>Children:
                                 <cfinput type="checkbox" id="checkboxChildren" name="Children" value="1"  />
-                        </p></td>
+                            </p></td>
                         <td><p>Corrections:
-                           <cfinput type="checkbox" id="checkboxCorrections" name="Corrections" value="1" />
-                        </p></td>
+                                <cfinput type="checkbox" id="checkboxCorrections" name="Corrections" value="1" />
+                            </p></td>
                         <td><p>Student:
                                 <cfinput type="checkbox" id="checkboxStudent" name="Student" value="1" />
-                        </p></td>
+                            </p></td>
                         <td><p>Elderly:
                                 <cfinput type="checkbox" id="checkboxElderly" name="Elderly" value="1" />
-                        </p></td>
+                            </p></td>
                     </tr>
                 </table>
                 <table >
                     <tr>
                         <td><p>VI:
                                 <cfinput type="checkbox" id="checkboxVI" name="VI" value="1" />
-                        </p></td>
+                            </p></td>
                         <td><p>Rehab:
                                 <cfinput type="checkbox" id="checkboxRehab" name="Rehab" value="1" />
-                        </p></td>
+                            </p></td>
                         <td><p>Adult:
                                 <cfinput type="checkbox" id="checkboxAdult" name="Adult" value="1" />
-                        </p></td>
+                            </p></td>
                         <td><p>OT_PT:
                                 <cfinput type="checkbox" id="checkboxOT_PT" name="OT_PT" value="1" />
-                        </p></td>
+                            </p></td>
                         <td><p>Women:
                                 <cfinput type="checkbox" id="checkboxWomen" name="Women" value="1" />
-                        </p></td>
+                            </p></td>
                         <td><p>Family:
                                 <cfinput type="checkbox" id="checkboxFamily" name="Family" value="1" />
-                        </p></td>
+                            </p></td>
                         <td><p>Voc:
                                 <cfinput type="checkbox" id="checkboxVoc" name="Voc" value="1" />
-                        </p></td>
+                            </p></td>
                     </tr>
                 </table>
                 <table >
@@ -157,25 +150,25 @@
                     <tr>
                         <td><p>BV:
                                 <cfinput type="checkbox" id="checkboxBV" name="BV" value="1" />
-                        </p></td>
+                            </p></td>
                         <td><p>Alternative_Education:
                                 <cfinput type="checkbox" id="checkboxAlternative_Education" name="Alternative_Education" value="1" />
-                        </p></td>
+                            </p></td>
                         <td><p>Private:
                                 <cfinput type="checkbox" id="checkboxPrivate" name="Private" value="1" />
-                        </p></td>
+                            </p></td>
                         <td><p>Neuro:
                                 <cfinput type="checkbox" id="checkboxNeuro" name="Neuro" value="1" />
-                        </p></td>
+                            </p></td>
                         <td><p>CP:
                                 <cfinput type="checkbox" id="checkboxCP" name="CP" value="1" />
-                        </p></td>
+                            </p></td>
                         <td><p>Counseling:
                                 <cfinput type="checkbox" id="checkboxCounseling" name="Counseling" value="1" />
-                        </p></td>
+                            </p></td>
                         <td><p>physical:
                                 <cfinput type="checkbox" id="checkboxphysical" name="physical" value="1" />
-                        </p></td>
+                            </p></td>
                     </tr>
                 </table>
                 <p>
@@ -184,8 +177,8 @@
             </fieldset>
         </cfform>
         </p>
-       <cfif IsDefined("FORM.InsertInternship")>
-  <cfquery datasource="InternDB_v2">
+        <cfif IsDefined("FORM.InsertInternship")>
+            <cfquery datasource="InternDB_v2">
 INSERT INTO intern 
     (FACILITY,STREET,CITY,STATE,ZIP,COUNTY,PHONE,EMAIL,URL,ADOLESCENTS,MH,MR,D_A,CHILDREN,CORRECTIONS,STUDENT,ELDERLY,VI,REHAB,ADULT,OT_PT,WOMEN,FAMILY,VOC,BV,ALTERNATIVE_EDUCATION,PRIVATE,NEURO,CP,COUNSELING,PHYSICAL,SUPERVISOR,DESCRIPTION)
 VALUES (<cfqueryparam  value="#form.Facility#" CFSQLType="CF_SQL_VARCHAR">,
@@ -213,7 +206,7 @@ VALUES (<cfqueryparam  value="#form.Facility#" CFSQLType="CF_SQL_VARCHAR">,
 					<cfqueryparam value="#form.Family#" CFSQLType="cf_sql_bit" >,
 					<cfqueryparam value="#form.Voc#" CFSQLType="cf_sql_bit" >,
 					<cfqueryparam value="#form.BV#" CFSQLType="cf_sql_bit" >,
-										<cfqueryparam value="#form.Alternative_Education#" CFSQLType="cf_sql_bit" >,
+					<cfqueryparam value="#form.Alternative_Education#" CFSQLType="cf_sql_bit" >,
 					<cfqueryparam value="#form.Private#" CFSQLType="cf_sql_bit" >,
 					<cfqueryparam value="#form.Neuro#" CFSQLType="cf_sql_bit" >,
 					<cfqueryparam value="#form.CP#" CFSQLType="cf_sql_bit" >,
@@ -224,10 +217,9 @@ VALUES (<cfqueryparam  value="#form.Facility#" CFSQLType="CF_SQL_VARCHAR">,
 
 )
 </cfquery>
-</cfif>
+        </cfif>
+    </div>
+    <cfinclude template="footer.cfm">
 </div>
-  	<cfinclude template="footer.cfm">
-</div>
-	
 </body>
 </html>

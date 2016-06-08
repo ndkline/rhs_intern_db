@@ -1,18 +1,18 @@
-<cfquery datasource="InternDB_v2" name="qInternships">
+<cfquery datasource="InternDB_v2" name="qInternship">
 	SELECT *
 	FROM intern
 	ORDER BY ID
 </cfquery>
 <cfparam name="Form.btnFAC" default="">
 <cfif Form.btnFAC EQ "A-Z">
-	<cfquery datasource="InternDB_v2" name="qInternships">
+	<cfquery datasource="InternDB_v2" name="qInternship">
 		SELECT *
 		FROM intern
 		ORDER BY Facility ASC;
 	</cfquery>
 </cfif>
 <cfif Form.btnFAC EQ "Z-A">
-	<cfquery datasource="InternDB_v2" name="qInternships">
+	<cfquery datasource="InternDB_v2" name="qInternship">
 		SELECT *
 		FROM intern
 		ORDER BY Facility DESC;
@@ -35,7 +35,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<title>
-			Internship Listings
+			Intern Data Editing/Deletion
 		</title>
 		<link href="styles.css" rel="stylesheet" type="text/css"/>
 	</head>
@@ -44,11 +44,11 @@
 		<div id="wrapper">
 		<div id="content">
 			<h1>
-				Internships 
+				Intern Data Editing/Deletion
 			</h1>
 			<p>
-				Use the form below to update the&nbsp;RHS Internship information. This form is
-				specifically for updating existing internships. To add a new internship, 
+				Use the form below to update or delete the&nbsp;RHS Internship information. This form is
+				specifically for updating or deleting existing internships. To add a new internship, 
 				<a href="InternshipInsert.cfm">
 					click here.
 				</a>
@@ -56,11 +56,11 @@
 			<form name="thisForm" action="InternshipListing.cfm" method="post">
 				<table border="1" cellpadding="5" cellspacing="0">
 					<tr>
-						<th>
-							&nbsp;
+						<th>&nbsp;
+							
 						</th>
-						<th>
-							&nbsp;
+						<th>&nbsp;
+							
 						</th>
 						<th>
 							ID
@@ -94,85 +94,85 @@
 						</th>
 					</tr>
 					<tr>
-						<th>
-							&nbsp;
+						<th>&nbsp;
+							
 						</th>
-						<th>
-							&nbsp;
+						<th>&nbsp;
+							
 						</th>
-						<th>
-							&nbsp;
+						<th>&nbsp;
+							
 						</th>
 						<th>
 							<input type="submit" name="btnFAC" value="A-Z">
 							<input type="submit" name="btnFAC" value="Z-A">
 						</th>
-						<th>
-							&nbsp;
+						<th>&nbsp;
+							
 						</th>
-						<th>
-							&nbsp;
+						<th>&nbsp;
+							
 						</th>
-						<th>
-							&nbsp;
+						<th>&nbsp;
+							
 						</th>
-						<th>
-							&nbsp;
+						<th>&nbsp;
+							
 						</th>
-						<th>
-							&nbsp;
+						<th>&nbsp;
+							
 						</th>
-						<th>
-							&nbsp;
+						<th>&nbsp;
+							
 						</th>
-						<th>
-							&nbsp;
+						<th>&nbsp;
+							
 						</th>
-						<th>
-							&nbsp;
+						<th>&nbsp;
+							
 						</th>
 					</tr>
-					<cfoutput query="qInternships">
+					<cfoutput query="qInternship">
 						<tr>
 							<td>
-								<a href="InternshipsUpdate.cfm?URL=#qInternships.ID#">
+								<a href="InternshipUpdate.cfm?ID=#qInternship.ID#">
 									Edit
 								</a>
 							</td>
 							<td>
-								<button onclick="return deleteInternship('InternshipDelete.cfm?ID=#qInternships.ID#')">
+								<button onClick="return deleteInternship('InternshipDelete.cfm?ID=#qInternship.ID#')">
 									Delete
 								</button>
 							</td>
 							<td>
-								#qInternships.ID#
+								#qInternship.ID#
 							</td>
 							<td>
-								#qInternships.Facility#
+								#qInternship.Facility#
 							</td>
 							<td>
-								#qInternships.Street#
+								#qInternship.Street#
 							</td>
 							<td>
-								#qInternships.State#
+								#qInternship.State#
 							</td>
 							<td>
-								#qInternships.City#
+								#qInternship.City#
 							</td>
 							<td>
-								#qInternships.Zip#
+								#qInternship.Zip#
 							</td>
 							<td>
-								#qInternships.County#
+								#qInternship.County#
 							</td>
 							<td>
-								#qInternships.Phone#
+								#qInternship.Phone#
 							</td>
 							<td>
-								#qInternships.Email#
+								#qInternship.Email#
 							</td>
 							<td>
-								#qInternships.Supervisor#
+								#qInternship.Supervisor#
 							</td>
 						</tr>
 					</cfoutput>
