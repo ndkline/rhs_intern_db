@@ -1,2 +1,9 @@
+<<<<<<< HEAD
 Rhs_internship_db.rar
 internshipUpdate.cfm.bak
+=======
+.DS_Store
+node_modules
+npm-debug.log
+bower_components
+>>>>>>> 7181d731a8cc039a0e7ec4056b38e61d0c57271b
