@@ -1,0 +1,116 @@
+<%@ Language=VBScript %>
+<%if isempty(Request.Form("OK")) then 
+Session("NumAttempts") = 1
+TheMessage = "Please log in below:"
+else
+	set conn = server.createobject ("adodb.connection")
+	conn.open "FILEDSN=C:\Program Files\Common Files\ODBC\Data Sources\internDB.dsn;" 
+	Set RSlogin = conn.Execute("Select ID, UserID,Password from Users where "&"UserID ='" & Request.Form("UserID") & "' and "&"Password='"& Request.Form("Password")&"'")
+	if RSLogin.EOF then
+		Session("NumAttempts") = Session("NumAttempts") + 1
+		if Application("NumAttempts") = 0 then
+			TheMessage = "Log In not found, please try again:"
+		elseif Session("NumAttempts") > Application("NumAttempts") then
+			TheMessage = "Log In not found. No more attempts allowed."
+		else
+			TheMessage = "Log In not found, please try again:"
+		end if
+	else
+		Session("ID") = RSLogin("ID")
+		Session("Name") = RSLogin("UserID")
+		Response.Redirect "Default.asp"
+	end if
+end if
+%>
+<html>
+<head>
+
+<title></title>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000080">
+<img border="0" src="http://www.ed.psu.edu/images-old/coe_wordmark.gif">
+  <table border="0" cellspacing="0" cellpadding="0" width="650">
+   <tr valign="top" align="left">
+	<td width="600">
+      <h2 align=center>
+      <font color="#000080">Welcome to the College of Education<br>
+      Intern&nbsp;Database&nbsp;Site</font>
+      </h2></td>
+   </tr>
+  </table>
+  <table border="0" cellspacing="0" cellpadding="0" width="650">
+   <tr valign="top" align="left">
+	<td></td>
+	<td width="562"><p><font size="+1" face="Tahoma, Bell Centennial"><% response.write TheMessage %></font></p></td>
+	<td></td>
+   </tr>
+  </table>
+ <%
+ if TheMessage <> "Log In not found. No more attempts allowed." then
+ %>
+<form action="logon.asp" method="post" id="form1" name="form1">
+<table cellpadding="0" cellspacing="0" border="0" width="650">
+<tr valign="top" align="left">
+<td>
+
+  <table border="0" cellspacing="0" cellpadding="0" width="175">
+   <tr valign="top" align="left">
+	<td></td>
+	<td width="125" colspan="2"><p><font size="+1" face="Tahoma, Bell Centennial" color="#000080">User ID</font></p></td>
+
+   </tr>
+   <tr valign="top" align="left">
+	<td colspan="3" height="18"></td>
+   </tr>
+   <tr valign="top" align="left">
+	<td></td>
+	<td width="125" colspan="2"><p><font size="+1" face="Tahoma, Bell Centennial" color="#000080">Password</font></p></td>
+
+   </tr>
+   <tr valign="top" align="left">
+	<td colspan="3" height="16"></td>
+   </tr>
+   <tr valign="top" align="left">
+	<td height="24"></td>
+	<td width="36"><input type="submit" name="OK" value="OK"></td>
+	<td></td>
+   </tr>
+  </table>
+</td>
+<td>
+
+  <table border="0" cellspacing="0" cellpadding="0" width="475">
+   <tr valign="top" align="left">
+	<td height="22"></td>
+	<td width="320"><input name="UserID" size="21" maxlength ="50" style="WIDTH: 126px; HEIGHT: 22px"></td>
+	<td></td>
+   </tr>
+   <tr valign="top" align="left">
+	<td colspan="3" height="18"></td>
+   </tr>
+   <tr valign="top" align="left">
+	<td height="22"></td>
+	<td width="320"><input type="password" name="Password" size ="21" maxlength="50" 
+            style="WIDTH: 128px; HEIGHT: 22px"></td>
+	<td></td>
+   </tr>
+   <tr valign="top" align="left">
+	<td colspan="3" height="39"></td>
+   </tr>
+  </table>
+</td>
+</tr>
+</table>
+</form>
+<%
+end if
+%>
+<p class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+<font color="#000080"><b>2000 The
+Pennsylvania State University<br>
+College of Education</b></font>
+  </p>
+</body>
+</html>
