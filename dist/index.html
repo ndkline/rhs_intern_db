@@ -1,769 +1,254 @@
-
 <!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation for Sites</title>
-    <link rel="stylesheet" href="assets/css/stately.css?v=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/app.css">
+<html ng-app="myApp">
+    <head>
+    
+        <link rel="stylesheet" href="css/foundation.css">
+        <link rel="stylesheet" href="css/stately.css">
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script> -->
+        <script src="app.js"></script>
 
-  </head>
-  <body  >
+        <style type="text/css">
+            ul.stately {background: none !important;width:200px; font-size:200px;}
+            .stately li{color:#b0b0b0;}
+            li.green{color:#a3d07e !important;}
 
-      <div class="top-bar">
+            @font-face {
+                 font-family: 'StateFaceRegular';
+                 src: url('font/stateface-regular-webfont.eot');
+                 src: url('font/stateface-regular-webfont.eot?#iefix') format('embedded-opentype'),
+                      url('font/stateface-regular-webfont.woff') format('woff'),
+                      url('font/stateface-regular-webfont.ttf') format('truetype'),
+                      url('font/stateface-regular-webfont.svg#StateFaceRegular') format('svg');
+                 font-weight: normal;
+                 font-style: normal;
+             }
+            span.state{font-family: 'StateFaceRegular'; font-size: 500%; color: #b0b0b0}
+            .even{
+                background: #e6e6e6;
+                border-radius: 15px;
+            }
+            .internship{
+                padding:25px 0;
+
+            }
+            .filter{
+                border-radius: 15px;
+                margin-top: 25px;
+            }
+
+        </style>
+
+</head>
+<body ng-controller="MyCtrl">
+    <div class="top-bar">
         <div class="top-bar-left">
-          <ul class="dropdown menu" data-dropdown-menu>
-            <li class="menu-text">College of Ed Logo</li>
-          </ul>
+            <ul class="dropdown menu" data-dropdown-menu>
+
+                    <a href="https://ed.psu.edu" target="_blank"><img src="images/psu_logo.png" width="150"></a>
+
+      
+            </ul>
         </div>
         <div class="top-bar-right">
-           <ul class="dropdown menu" data-dropdown-menu>
-            <li><a data-open="exampleModal1" >About</a></li>
-          </ul>
+            <ul class="menu">
+                <li><a href="/">Rehabilitation and Human Services Intern Database</a></li>
+            </ul>
         </div>
-      </div>
-    
-      <div class="row" id="overview"  >
-        <div class="large-12 columns">  
-          <h1>Rehabilitation and Human Services Intern Database</h1>
-          <p>This is a database of internship opportunities compiled by the
-            Department of Counselor Education, Counseling Psychology,
-            and Rehabilitation and Human Services in the College of Education. </p>
-    
-            <p>Students may search for a site by using four different options. You may search by disability category, by agency name, by county, and by state. Searching by state will produce a more detailed list. Search results are returned in alphabetical order by agency name.</p>
-        </div>
-      </div>
-      <div class="row " >
-        <form class=" large-12 columns" >
-          <ul class="vertical menu" data-accordion-menu style="background:white; width:100%;">
-            <li>
-              <a href="#">Location</a>
-                <ul class="menu vertical nested">
-                  <li >
-                    <div class="container">
-                      <div class="row">
-                        <fieldset class="large-12 columns">
-                          <legend>State</legend>
-                          <div style="column-count: 5;  -webkit-column-count: 5; -moz-column-count: 5;">
-                            <input type="checkbox" value="AL" name="state" id="AL"><label for="AL">Alabama</label><br>
-                            <input type="checkbox" value="AK" name="state" id="AK"><label for="AK">Alaska</label><br>
-                            <input type="checkbox" value="AZ" name="state" id="AZ"><label for="AZ">Arizona</label><br>
-                            <input type="checkbox" value="AR" name="state" id="AR"><label for="AR">Arkansas</label><br>
-                            <input type="checkbox" value="CA" name="state" id="CA"><label for="CA">California</label><br>
-                            <input type="checkbox" value="CO" name="state" id="CO"><label for="CO">Colorado</label><br>
-                            <input type="checkbox" value="CT" name="state" id="CT"><label for="CT">Connecticut</label><br>
-                            <input type="checkbox" value="DE" name="state" id="DE"><label for="DE">Delaware</label><br>
-                            <input type="checkbox" value="DC" name="state" id="DC"><label for="DC">District Of Columbia</label><br>
-                            <input type="checkbox" value="FL" name="state" id="FL"><label for="FL">Florida</label><br>
-                            <input type="checkbox" value="GA" name="state" id="GA"><label for="GA">Georgia</label><br>
-                            <input type="checkbox" value="HI" name="state" id="HI"><label for="HI">Hawaii</label><br>
-                            <input type="checkbox" value="ID" name="state" id="ID"><label for="ID">Idaho</label><br>
-                            <input type="checkbox" value="IL" name="state" id="IL"><label for="IL">Illinois</label><br>
-                            <input type="checkbox" value="IN" name="state" id="IN"><label for="IN">Indiana</label><br>
-                            <input type="checkbox" value="IA" name="state" id="IA"><label for="IA">Iowa</label><br>
-                            <input type="checkbox" value="KS" name="state" id="KS"><label for="KS">Kansas</label><br>
-                            <input type="checkbox" value="KY" name="state" id="KY"><label for="KY">Kentucky</label><br>
-                            <input type="checkbox" value="LA" name="state" id="LA"><label for="LA">Louisiana</label><br>
-                            <input type="checkbox" value="ME" name="state" id="ME"><label for="ME">Maine</label><br>
-                            <input type="checkbox" value="MD" name="state" id="MD"><label for="MD">Maryland</label><br>
-                            <input type="checkbox" value="MA" name="state" id="MA"><label for="MA">Massachusetts</label><br>
-                            <input type="checkbox" value="MI" name="state" id="MI"><label for="MI">Michigan</label><br>
-                            <input type="checkbox" value="MN" name="state" id="MN"><label for="MN">Minnesota</label><br>
-                            <input type="checkbox" value="MS" name="state" id="MS"><label for="MS">Mississippi</label><br>
-                            <input type="checkbox" value="MO" name="state" id="MO"><label for="MO">Missouri</label><br>
-                            <input type="checkbox" value="MT" name="state" id="MT"><label for="MT">Montana</label><br>
-                            <input type="checkbox" value="NE" name="state" id="NE"><label for="NE">Nebraska</label><br>
-                            <input type="checkbox" value="NV" name="state" id="NV"><label for="NV">Nevada</label><br>
-                            <input type="checkbox" value="NH" name="state" id="NH"><label for="NH">New Hampshire</label><br>
-                            <input type="checkbox" value="NJ" name="state" id="NJ"><label for="NJ">New Jersey</label><br>
-                            <input type="checkbox" value="NM" name="state" id="NM"><label for="NM">New Mexico</label><br>
-                            <input type="checkbox" value="NY" name="state" id="NY"><label for="NY">New York</label><br>
-                            <input type="checkbox" value="NC" name="state" id="NC"><label for="NC">North Carolina</label><br>
-                            <input type="checkbox" value="ND" name="state" id="ND"><label for="ND">North Dakota</label><br>
-                            <input type="checkbox" value="OH" name="state" id="OH"><label for="OH">Ohio</label><br>
-                            <input type="checkbox" value="OK" name="state" id="OK"><label for="OK">Oklahoma</label><br>
-                            <input type="checkbox" value="OR" name="state" id="OR"><label for="OR">Oregon</label><br>
-                            <input type="checkbox" value="PA" name="state" id="PA"><label for="PA">Pennsylvania</label><br>
-                            <input type="checkbox" value="RI" name="state" id="RI"><label for="RI">Rhode Island</label><br>
-                            <input type="checkbox" value="SC" name="state" id="SC"><label for="SC">South Carolina</label><br>
-                            <input type="checkbox" value="SD" name="state" id="SD"><label for="SD">South Dakota</label><br>
-                            <input type="checkbox" value="TN" name="state" id="TN"><label for="TN">Tennessee</label><br>
-                            <input type="checkbox" value="TX" name="state" id="TX"><label for="TX">Texas</label><br>
-                            <input type="checkbox" value="UT" name="state" id="UT"><label for="UT">Utah</label><br>
-                            <input type="checkbox" value="VT" name="state" id="VT"><label for="VT">Vermont</label><br>
-                            <input type="checkbox" value="VA" name="state" id="VA"><label for="VA">Virginia</label><br>
-                            <input type="checkbox" value="WA" name="state" id="WA"><label for="WA">Washington</label><br>
-                            <input type="checkbox" value="WV" name="state" id="WV"><label for="WV">West Virginia</label><br>
-                            <input type="checkbox" value="WI" name="state" id="WI"><label for="WI">Wisconsin</label><br>
-                            <input type="checkbox" value="WY" name="state" id="WY"><label for="WY">Wyoming</label><br>
-                          </div>
-                        </fieldset>
-    
-                        <fieldset class="large-3 columns callout secondary" >
-                          <legend>1st State's Counties</legend>
-                          <div style="column-count: 2;  -webkit-column-count: 2; -moz-column-count: 2;">
-                          <input type="checkbox" value="AL" name="state" id="AL"><label for="AL">ddd</label><br>
-                          <input type="checkbox" value="AK" name="state" id="AK"><label for="AK">ffffa</label><br>
-                          <input type="checkbox" value="AZ" name="state" id="AZ"><label for="AZ">asdfa</label><br>
-                          <input type="checkbox" value="AR" name="state" id="AR"><label for="AR">afdfa</label><br>
-                          <input type="checkbox" value="CA" name="state" id="CA"><label for="CA">aef</label><br>               
-                          <input type="checkbox" value="AZ" name="state" id="AZ"><label for="AZ">asdfa</label><br>
-                          <input type="checkbox" value="AR" name="state" id="AR"><label for="AR">afdfa</label><br>
-                          <input type="checkbox" value="CA" name="state" id="CA"><label for="CA">aef</label><br>
-                          <input type="checkbox" value="CO" name="state" id="CO"><label for="CO">333ffff</label><br>
-                          <input type="checkbox" value="CT" name="state" id="CT"><label for="CT">asdfefdaf</label><br>
-                          </div>
-                        </fieldset>
-                        <fieldset class="large-3 columns callout secondary">
-                          <legend>2nd State's Counties</legend>
-                          <div style="column-count: 2;  -webkit-column-count: 2; -moz-column-count: 2;">
-                          <input type="checkbox" value="AL" name="state" id="AL"><label for="AL">ddd</label><br>
-                          <input type="checkbox" value="AK" name="state" id="AK"><label for="AK">ffffa</label><br>
-                          <input type="checkbox" value="AZ" name="state" id="AZ"><label for="AZ">asdfa</label><br>
-                          <input type="checkbox" value="AR" name="state" id="AR"><label for="AR">afdfa</label><br>
-                          <input type="checkbox" value="CA" name="state" id="CA"><label for="CA">aef</label><br>               
-                          <input type="checkbox" value="AZ" name="state" id="AZ"><label for="AZ">asdfa</label><br>
-                          <input type="checkbox" value="AR" name="state" id="AR"><label for="AR">afdfa</label><br>
-                          <input type="checkbox" value="CA" name="state" id="CA"><label for="CA">aef</label><br>
-                          <input type="checkbox" value="CO" name="state" id="CO"><label for="CO">333ffff</label><br>
-                          <input type="checkbox" value="CT" name="state" id="CT"><label for="CT">asdfefdaf</label><br>
-                          </div>
-                        </fieldset>
-                        <fieldset class="large-3 columns end callout secondary">
-                          <legend>3rd State's Counties</legend>
-                          <div style="column-count: 2;  -webkit-column-count: 2; -moz-column-count: 2;">
-                          <input type="checkbox" value="AL" name="state" id="AL"><label for="AL">ddd</label><br>
-                          <input type="checkbox" value="AK" name="state" id="AK"><label for="AK">ffffa</label><br>
-                          <input type="checkbox" value="AZ" name="state" id="AZ"><label for="AZ">asdfa</label><br>
-                          <input type="checkbox" value="AR" name="state" id="AR"><label for="AR">afdfa</label><br>
-                          <input type="checkbox" value="CA" name="state" id="CA"><label for="CA">aef</label><br>               
-                          <input type="checkbox" value="AZ" name="state" id="AZ"><label for="AZ">asdfa</label><br>
-                          <input type="checkbox" value="AR" name="state" id="AR"><label for="AR">afdfa</label><br>
-                          <input type="checkbox" value="CA" name="state" id="CA"><label for="CA">aef</label><br>
-                          <input type="checkbox" value="CO" name="state" id="CO"><label for="CO">333ffff</label><br>
-                          <input type="checkbox" value="CT" name="state" id="CT"><label for="CT">asdfefdaf</label><br>
-                          </div>
-                        </fieldset>
-                        
-                      </div>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#">Agency</a>
-                  <ul class="menu vertical nested">
-                    <li>List</li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#">Disability and/or Population</a>
-                  <ul class="menu vertical nested">
-                    <li>List</li>
-                  </ul>
-                </li>
-              </ul>
-            <div class="button-group text-right">
-              <a class="secondary button">Clear</a>
-              <input type="submit" class="button success" value="Submit">
-            </div>
-          
-        </form> 
-      </div>
-      <hr id="results">
-    
-      <div class="result_item row">
-    
-        <div class="large-9 columns">
-          <div class="row">
-            <div class="large-3 columns">
-              <ul class="no-bullet">
-                <li><strong>Agency:</strong> <a href="http://www.abettertoday.org/" target="_blank">A Better Today</a></li>
-                <li><strong>Supervisor:</strong> Lori Austin</li>
-                <li><strong>County:</strong> Lackawanna</li>
-                <li>
-                  <!-- <strong>Address:</strong> -->
-                  <address>
-                    1339 N. Main Avenue #2<br>
-                    Scranton PA, 18508-1878
-                  </address>
-                </li>
-                <li><a href="tel:5703441418"><strong><i class="fa fa-phone-square" aria-hidden="true"></i></strong> 570-344-1418 </a></li>
-                <li><a href="mailto:test@email.com"><strong><i class="fa fa-envelope" aria-hidden="true"></i></strong> test@email.com</a></li>
-              </ul>
-            </div>
-            <div class="large-9 columns" >
-              <h2>#541</h2>
-              <span class="secondary label">Adolescents</span>
-                <span class="secondary label">Elderly</span>
-                <span class="secondary label">Family</span>
-                <span class="secondary label">D/A</span>
-              </p>
-              <p>
-                Provides comprehensive outpatient treatment to adults, adolescents, their families, friends and significant others who are abusing or dependent upon alcohol or other drugs   
-              </p>
-    
-            </div>
-            
-          </div>
-        </div>
-    
-        <div class="large-3 columns">
-          <ul class="stately" id="plain"> 
-            <li data-state="al" class="al">A</li>
-            <li data-state="ak" class="ak">B</li>
-            <li data-state="ar" class="ar">C</li>           
-            <li data-state="az" class="az">D</li>
-            <li data-state="ca" class="ca">E</li>
-            <li data-state="co" class="co">F</li>
-            <li data-state="ct" class="ct">G</li>
-            <li data-state="de" class="de">H</li>
-            <li data-state="dc" class="dc">I</li>
-            <li data-state="fl" class="fl">J</li>
-            <li data-state="ga" class="ga">K</li>
-            <li data-state="hi" class="hi">L</li>
-            <li data-state="id" class="id">M</li>
-            <li data-state="il" class="il">N</li>
-            <li data-state="in" class="in">O</li>
-            <li data-state="ia" class="ia">P</li>
-            <li data-state="ks" class="ks">Q</li>
-            <li data-state="ky" class="ky">R</li>
-            <li data-state="la" class="la">S</li>
-            <li data-state="me" class="me">T</li>
-            <li data-state="md" class="md">U</li>
-            <li data-state="ma" class="ma">V</li>
-            <li data-state="mi" class="mi">W</li>
-            <li data-state="mn" class="mn">X</li>
-            <li data-state="ms" class="ms">Y</li>
-            <li data-state="mo" class="mo">Z</li>
-            <li data-state="mt" class="mt">a</li>
-            <li data-state="ne" class="ne">b</li>
-            <li data-state="nv" class="nv">c</li>
-            <li data-state="nh" class="nh">d</li>
-            <li data-state="nj" class="nj">e</li>
-            <li data-state="nm" class="nm">f</li>
-            <li data-state="ny" class="ny">g</li>
-            <li data-state="nc" class="nc">h</li>
-            <li data-state="nd" class="nd">i</li>
-            <li data-state="oh" class="oh">j</li>     
-            <li data-state="ok" class="ok">k</li>
-            <li data-state="or" class="or">l</li>
-            <li data-state="pa" class="pa" style="  color: green;">m</li>
-            <li data-state="ri" class="ri">n</li>
-            <li data-state="sc" class="sc">o</li>
-            <li data-state="sd" class="sd">p</li>
-            <li data-state="tn" class="tn">q</li>
-            <li data-state="tx" class="tx">r</li>
-            <li data-state="ut" class="ut">s</li>
-            <li data-state="va" class="va">t</li>
-            <li data-state="vt" class="vt">u</li>     
-            <li data-state="wa" class="wa">v</li>
-            <li data-state="wv" class="wv">w</li>
-            <li data-state="wi" class="wi">x</li>
-            <li data-state="wy" class="wy">y</li> 
-          </ul>
-        </div>
-        
-    
-      </div>
-    
-      <div class="result_item row even">
-    
-        <div class="large-9 columns">
-          <div class="row">
-            <div class="large-3 columns">
-              <ul class="no-bullet">
-                <li><strong>Agency:</strong> <a href="http://www.abettertoday.org/" target="_blank">A Better Today</a></li>
-                <li><strong>Supervisor:</strong> Lori Austin</li>
-                <li><strong>County:</strong> Lackawanna</li>
-                <li>
-                  <!-- <strong>Address:</strong> -->
-                  <address>
-                    1339 N. Main Avenue #2<br>
-                    Scranton PA, 18508-1878
-                  </address>
-                </li>
-                <li><a href="tel:5703441418"><strong><i class="fa fa-phone-square" aria-hidden="true"></i></strong> 570-344-1418 </a></li>
-                <li><a href="mailto:test@email.com"><strong><i class="fa fa-envelope" aria-hidden="true"></i></strong> test@email.com</a></li>
-              </ul>
-            </div>
-            <div class="large-9 columns" >
-              <h2>#541</h2>
-              <span class="secondary label">Adolescents</span>
-                <span class="secondary label">Elderly</span>
-                <span class="secondary label">Family</span>
-                <span class="secondary label">D/A</span>
-              </p>
-              <p>
-                Provides comprehensive outpatient treatment to adults, adolescents, their families, friends and significant others who are abusing or dependent upon alcohol or other drugs   
-              </p>
-    
-            </div>
-            
-          </div>
-        </div>
-    
-        <div class="large-3 columns">
-          <ul class="stately" id="plain"> 
-            <li data-state="al" class="al">A</li>
-            <li data-state="ak" class="ak">B</li>
-            <li data-state="ar" class="ar">C</li>           
-            <li data-state="az" class="az">D</li>
-            <li data-state="ca" class="ca">E</li>
-            <li data-state="co" class="co">F</li>
-            <li data-state="ct" class="ct">G</li>
-            <li data-state="de" class="de">H</li>
-            <li data-state="dc" class="dc">I</li>
-            <li data-state="fl" class="fl">J</li>
-            <li data-state="ga" class="ga">K</li>
-            <li data-state="hi" class="hi">L</li>
-            <li data-state="id" class="id">M</li>
-            <li data-state="il" class="il">N</li>
-            <li data-state="in" class="in">O</li>
-            <li data-state="ia" class="ia">P</li>
-            <li data-state="ks" class="ks">Q</li>
-            <li data-state="ky" class="ky">R</li>
-            <li data-state="la" class="la">S</li>
-            <li data-state="me" class="me">T</li>
-            <li data-state="md" class="md">U</li>
-            <li data-state="ma" class="ma">V</li>
-            <li data-state="mi" class="mi">W</li>
-            <li data-state="mn" class="mn">X</li>
-            <li data-state="ms" class="ms">Y</li>
-            <li data-state="mo" class="mo">Z</li>
-            <li data-state="mt" class="mt">a</li>
-            <li data-state="ne" class="ne" style="  color: green;">b</li>
-            <li data-state="nv" class="nv">c</li>
-            <li data-state="nh" class="nh">d</li>
-            <li data-state="nj" class="nj">e</li>
-            <li data-state="nm" class="nm">f</li>
-            <li data-state="ny" class="ny">g</li>
-            <li data-state="nc" class="nc">h</li>
-            <li data-state="nd" class="nd">i</li>
-            <li data-state="oh" class="oh">j</li>     
-            <li data-state="ok" class="ok">k</li>
-            <li data-state="or" class="or">l</li>
-            <li data-state="pa" class="pa">m</li>
-            <li data-state="ri" class="ri">n</li>
-            <li data-state="sc" class="sc">o</li>
-            <li data-state="sd" class="sd">p</li>
-            <li data-state="tn" class="tn">q</li>
-            <li data-state="tx" class="tx">r</li>
-            <li data-state="ut" class="ut">s</li>
-            <li data-state="va" class="va">t</li>
-            <li data-state="vt" class="vt">u</li>     
-            <li data-state="wa" class="wa">v</li>
-            <li data-state="wv" class="wv">w</li>
-            <li data-state="wi" class="wi">x</li>
-            <li data-state="wy" class="wy">y</li> 
-          </ul>
-        </div>
-        
-    
-      </div>
-    
-      <div class="result_item  row">
-    
-        <div class="large-9 columns">
-          <div class="row">
-            <div class="large-3 columns">
-              <ul class="no-bullet">
-                <li><strong>Agency:</strong> <a href="http://www.abettertoday.org/" target="_blank">A Better Today</a></li>
-                <li><strong>Supervisor:</strong> Lori Austin</li>
-                <li><strong>County:</strong> Lackawanna</li>
-                <li>
-                  <!-- <strong>Address:</strong> -->
-                  <address>
-                    1339 N. Main Avenue #2<br>
-                    Scranton PA, 18508-1878
-                  </address>
-                </li>
-                <li><a href="tel:5703441418"><strong><i class="fa fa-phone-square" aria-hidden="true"></i></strong> 570-344-1418 </a></li>
-                <li><a href="mailto:test@email.com"><strong><i class="fa fa-envelope" aria-hidden="true"></i></strong> test@email.com</a></li>
-              </ul>
-            </div>
-            <div class="large-9 columns" >
-              <h2>#541</h2>
-              <span class="secondary label">Adolescents</span>
-                <span class="secondary label">Elderly</span>
-                <span class="secondary label">Family</span>
-                <span class="secondary label">D/A</span>
-              </p>
-              <p>
-                Provides comprehensive outpatient treatment to adults, adolescents, their families, friends and significant others who are abusing or dependent upon alcohol or other drugs   
-              </p>
-    
-            </div>
-            
-          </div>
-        </div>
-    
-        <div class="large-3 columns">
-          <ul class="stately" id="plain"> 
-            <li data-state="al" class="al">A</li>
-            <li data-state="ak" class="ak">B</li>
-            <li data-state="ar" class="ar">C</li>           
-            <li data-state="az" class="az">D</li>
-            <li data-state="ca" class="ca">E</li>
-            <li data-state="co" class="co">F</li>
-            <li data-state="ct" class="ct">G</li>
-            <li data-state="de" class="de">H</li>
-            <li data-state="dc" class="dc">I</li>
-            <li data-state="fl" class="fl">J</li>
-            <li data-state="ga" class="ga">K</li>
-            <li data-state="hi" class="hi">L</li>
-            <li data-state="id" class="id">M</li>
-            <li data-state="il" class="il">N</li>
-            <li data-state="in" class="in">O</li>
-            <li data-state="ia" class="ia">P</li>
-            <li data-state="ks" class="ks">Q</li>
-            <li data-state="ky" class="ky">R</li>
-            <li data-state="la" class="la">S</li>
-            <li data-state="me" class="me">T</li>
-            <li data-state="md" class="md">U</li>
-            <li data-state="ma" class="ma">V</li>
-            <li data-state="mi" class="mi">W</li>
-            <li data-state="mn" class="mn">X</li>
-            <li data-state="ms" class="ms">Y</li>
-            <li data-state="mo" class="mo">Z</li>
-            <li data-state="mt" class="mt">a</li>
-            <li data-state="ne" class="ne">b</li>
-            <li data-state="nv" class="nv">c</li>
-            <li data-state="nh" class="nh">d</li>
-            <li data-state="nj" class="nj">e</li>
-            <li data-state="nm" class="nm">f</li>
-            <li data-state="ny" class="ny">g</li>
-            <li data-state="nc" class="nc">h</li>
-            <li data-state="nd" class="nd">i</li>
-            <li data-state="oh" class="oh">j</li>     
-            <li data-state="ok" class="ok">k</li>
-            <li data-state="or" class="or">l</li>
-            <li data-state="pa" class="pa">m</li>
-            <li data-state="ri" class="ri">n</li>
-            <li data-state="sc" class="sc">o</li>
-            <li data-state="sd" class="sd" style="  color: green;">p</li>
-            <li data-state="tn" class="tn">q</li>
-            <li data-state="tx" class="tx">r</li>
-            <li data-state="ut" class="ut">s</li>
-            <li data-state="va" class="va">t</li>
-            <li data-state="vt" class="vt">u</li>     
-            <li data-state="wa" class="wa">v</li>
-            <li data-state="wv" class="wv">w</li>
-            <li data-state="wi" class="wi">x</li>
-            <li data-state="wy" class="wy">y</li> 
-          </ul>
-        </div>
-        
-    
-      </div>
-    
-      <div class="result_item row even">
-    
-        <div class="large-9 columns">
-          <div class="row">
-            <div class="large-3 columns">
-              <ul class="no-bullet">
-                <li><strong>Agency:</strong> <a href="http://www.abettertoday.org/" target="_blank">A Better Today</a></li>
-                <li><strong>Supervisor:</strong> Lori Austin</li>
-                <li><strong>County:</strong> Lackawanna</li>
-                <li>
-                  <!-- <strong>Address:</strong> -->
-                  <address>
-                    1339 N. Main Avenue #2<br>
-                    Scranton PA, 18508-1878
-                  </address>
-                </li>
-                <li><a href="tel:5703441418"><strong><i class="fa fa-phone-square" aria-hidden="true"></i></strong> 570-344-1418 </a></li>
-                <li><a href="mailto:test@email.com"><strong><i class="fa fa-envelope" aria-hidden="true"></i></strong> test@email.com</a></li>
-              </ul>
-            </div>
-            <div class="large-9 columns" >
-              <h2>#541</h2>
-              <span class="secondary label">Adolescents</span>
-                <span class="secondary label">Elderly</span>
-                <span class="secondary label">Family</span>
-                <span class="secondary label">D/A</span>
-              </p>
-              <p>
-                Provides comprehensive outpatient treatment to adults, adolescents, their families, friends and significant others who are abusing or dependent upon alcohol or other drugs   
-              </p>
-            </div>
-            
-          </div>
-        </div>
-    
-        <div class="large-3 columns">
-          <ul class="stately" id="plain"> 
-            <li data-state="al" class="al">A</li>
-            <li data-state="ak" class="ak">B</li>
-            <li data-state="ar" class="ar">C</li>           
-            <li data-state="az" class="az">D</li>
-            <li data-state="ca" class="ca">E</li>
-            <li data-state="co" class="co">F</li>
-            <li data-state="ct" class="ct">G</li>
-            <li data-state="de" class="de">H</li>
-            <li data-state="dc" class="dc">I</li>
-            <li data-state="fl" class="fl">J</li>
-            <li data-state="ga" class="ga">K</li>
-            <li data-state="hi" class="hi">L</li>
-            <li data-state="id" class="id">M</li>
-            <li data-state="il" class="il">N</li>
-            <li data-state="in" class="in">O</li>
-            <li data-state="ia" class="ia">P</li>
-            <li data-state="ks" class="ks">Q</li>
-            <li data-state="ky" class="ky">R</li>
-            <li data-state="la" class="la">S</li>
-            <li data-state="me" class="me">T</li>
-            <li data-state="md" class="md">U</li>
-            <li data-state="ma" class="ma">V</li>
-            <li data-state="mi" class="mi">W</li>
-            <li data-state="mn" class="mn">X</li>
-            <li data-state="ms" class="ms">Y</li>
-            <li data-state="mo" class="mo">Z</li>
-            <li data-state="mt" class="mt">a</li>
-            <li data-state="ne" class="ne">b</li>
-            <li data-state="nv" class="nv">c</li>
-            <li data-state="nh" class="nh">d</li>
-            <li data-state="nj" class="nj">e</li>
-            <li data-state="nm" class="nm"  style="  color: green;">f</li>
-            <li data-state="ny" class="ny">g</li>
-            <li data-state="nc" class="nc">h</li>
-            <li data-state="nd" class="nd">i</li>
-            <li data-state="oh" class="oh">j</li>     
-            <li data-state="ok" class="ok">k</li>
-            <li data-state="or" class="or">l</li>
-            <li data-state="pa" class="pa">m</li>
-            <li data-state="ri" class="ri">n</li>
-            <li data-state="sc" class="sc">o</li>
-            <li data-state="sd" class="sd">p</li>
-            <li data-state="tn" class="tn">q</li>
-            <li data-state="tx" class="tx">r</li>
-            <li data-state="ut" class="ut">s</li>
-            <li data-state="va" class="va">t</li>
-            <li data-state="vt" class="vt">u</li>     
-            <li data-state="wa" class="wa">v</li>
-            <li data-state="wv" class="wv">w</li>
-            <li data-state="wi" class="wi">x</li>
-            <li data-state="wy" class="wy">y</li> 
-          </ul>
-        </div>
-        
-    
-      </div>
-    
-      <div class="result_item row">
-    
-        <div class="large-9 columns">
-          <div class="row">
-            <div class="large-3 columns">
-              <ul class="no-bullet">
-                <li><strong>Agency:</strong> <a href="http://www.abettertoday.org/" target="_blank">A Better Today</a></li>
-                <li><strong>Supervisor:</strong> Lori Austin</li>
-                <li><strong>County:</strong> Lackawanna</li>
-                <li>
-                  <!-- <strong>Address:</strong> -->
-                  <address>
-                    1339 N. Main Avenue #2<br>
-                    Scranton PA, 18508-1878
-                  </address>
-                </li>
-                <li><a href="tel:5703441418"><strong><i class="fa fa-phone-square" aria-hidden="true"></i></strong> 570-344-1418 </a></li>
-                <li><a href="mailto:test@email.com"><strong><i class="fa fa-envelope" aria-hidden="true"></i></strong> test@email.com</a></li>
-              </ul>
-            </div>
-            <div class="large-9 columns" >
-              <h2>#541</h2>
-              <span class="secondary label">Adolescents</span>
-                <span class="secondary label">Elderly</span>
-                <span class="secondary label">Family</span>
-                <span class="secondary label">D/A</span>
-              </p>
-              <p>
-                Provides comprehensive outpatient treatment to adults, adolescents, their families, friends and significant others who are abusing or dependent upon alcohol or other drugs   
-              </p>
-            </div>
-            
-          </div>
-        </div>
-    
-        <div class="large-3 columns">
-          <ul class="stately" id="plain"> 
-            <li data-state="al" class="al">A</li>
-            <li data-state="ak" class="ak">B</li>
-            <li data-state="ar" class="ar">C</li>           
-            <li data-state="az" class="az">D</li>
-            <li data-state="ca" class="ca">E</li>
-            <li data-state="co" class="co">F</li>
-            <li data-state="ct" class="ct">G</li>
-            <li data-state="de" class="de">H</li>
-            <li data-state="dc" class="dc">I</li>
-            <li data-state="fl" class="fl">J</li>
-            <li data-state="ga" class="ga">K</li>
-            <li data-state="hi" class="hi">L</li>
-            <li data-state="id" class="id">M</li>
-            <li data-state="il" class="il">N</li>
-            <li data-state="in" class="in">O</li>
-            <li data-state="ia" class="ia">P</li>
-            <li data-state="ks" class="ks">Q</li>
-            <li data-state="ky" class="ky" style="  color: green;">R</li>
-            <li data-state="la" class="la">S</li>
-            <li data-state="me" class="me">T</li>
-            <li data-state="md" class="md">U</li>
-            <li data-state="ma" class="ma">V</li>
-            <li data-state="mi" class="mi">W</li>
-            <li data-state="mn" class="mn">X</li>
-            <li data-state="ms" class="ms">Y</li>
-            <li data-state="mo" class="mo">Z</li>
-            <li data-state="mt" class="mt">a</li>
-            <li data-state="ne" class="ne">b</li>
-            <li data-state="nv" class="nv">c</li>
-            <li data-state="nh" class="nh">d</li>
-            <li data-state="nj" class="nj">e</li>
-            <li data-state="nm" class="nm">f</li>
-            <li data-state="ny" class="ny">g</li>
-            <li data-state="nc" class="nc">h</li>
-            <li data-state="nd" class="nd">i</li>
-            <li data-state="oh" class="oh">j</li>     
-            <li data-state="ok" class="ok">k</li>
-            <li data-state="or" class="or">l</li>
-            <li data-state="pa" class="pa">m</li>
-            <li data-state="ri" class="ri">n</li>
-            <li data-state="sc" class="sc">o</li>
-            <li data-state="sd" class="sd">p</li>
-            <li data-state="tn" class="tn">q</li>
-            <li data-state="tx" class="tx">r</li>
-            <li data-state="ut" class="ut">s</li>
-            <li data-state="va" class="va">t</li>
-            <li data-state="vt" class="vt">u</li>     
-            <li data-state="wa" class="wa">v</li>
-            <li data-state="wv" class="wv">w</li>
-            <li data-state="wi" class="wi">x</li>
-            <li data-state="wy" class="wy">y</li> 
-          </ul>
-        </div>
-        
-    
-      </div>
-    
-      <div class="result_item row even">
-    
-        <div class="large-9 columns">
-          <div class="row">
-            <div class="large-3 columns">
-              <ul class="no-bullet">
-                <li><strong>Agency:</strong> <a href="http://www.abettertoday.org/" target="_blank">A Better Today</a></li>
-                <li><strong>Supervisor:</strong> Lori Austin</li>
-                <li><strong>County:</strong> Lackawanna</li>
-                <li>
-                  <!-- <strong>Address:</strong> -->
-                  <address>
-                    1339 N. Main Avenue #2<br>
-                    Scranton PA, 18508-1878
-                  </address>
-                </li>
-                <li><a href="tel:5703441418"><strong><i class="fa fa-phone-square" aria-hidden="true"></i></strong> 570-344-1418 </a></li>
-                <li><a href="mailto:test@email.com"><strong><i class="fa fa-envelope" aria-hidden="true"></i></strong> test@email.com</a></li>
-              </ul>
-            </div>
-            <div class="large-9 columns" >
-              <h2>#541</h2>
-              <span class="secondary label">Adolescents</span>
-                <span class="secondary label">Elderly</span>
-                <span class="secondary label">Family</span>
-                <span class="secondary label">D/A</span>
-              </p>
-              <p>
-                Provides comprehensive outpatient treatment to adults, adolescents, their families, friends and significant others who are abusing or dependent upon alcohol or other drugs   
-              </p>
-    
-            </div>
-            
-          </div>
-        </div>
-    
-        <div class="large-3 columns">
-          <ul class="stately" id="plain"> 
-            <li data-state="al" class="al">A</li>
-            <li data-state="ak" class="ak">B</li>
-            <li data-state="ar" class="ar">C</li>           
-            <li data-state="az" class="az">D</li>
-            <li data-state="ca" class="ca"  style="  color: green;">E</li>
-            <li data-state="co" class="co">F</li>
-            <li data-state="ct" class="ct">G</li>
-            <li data-state="de" class="de">H</li>
-            <li data-state="dc" class="dc">I</li>
-            <li data-state="fl" class="fl">J</li>
-            <li data-state="ga" class="ga">K</li>
-            <li data-state="hi" class="hi">L</li>
-            <li data-state="id" class="id">M</li>
-            <li data-state="il" class="il">N</li>
-            <li data-state="in" class="in">O</li>
-            <li data-state="ia" class="ia">P</li>
-            <li data-state="ks" class="ks">Q</li>
-            <li data-state="ky" class="ky">R</li>
-            <li data-state="la" class="la">S</li>
-            <li data-state="me" class="me">T</li>
-            <li data-state="md" class="md">U</li>
-            <li data-state="ma" class="ma">V</li>
-            <li data-state="mi" class="mi">W</li>
-            <li data-state="mn" class="mn">X</li>
-            <li data-state="ms" class="ms">Y</li>
-            <li data-state="mo" class="mo">Z</li>
-            <li data-state="mt" class="mt">a</li>
-            <li data-state="ne" class="ne">b</li>
-            <li data-state="nv" class="nv">c</li>
-            <li data-state="nh" class="nh">d</li>
-            <li data-state="nj" class="nj">e</li>
-            <li data-state="nm" class="nm">f</li>
-            <li data-state="ny" class="ny">g</li>
-            <li data-state="nc" class="nc">h</li>
-            <li data-state="nd" class="nd">i</li>
-            <li data-state="oh" class="oh">j</li>     
-            <li data-state="ok" class="ok">k</li>
-            <li data-state="or" class="or">l</li>
-            <li data-state="pa" class="pa">m</li>
-            <li data-state="ri" class="ri">n</li>
-            <li data-state="sc" class="sc">o</li>
-            <li data-state="sd" class="sd">p</li>
-            <li data-state="tn" class="tn">q</li>
-            <li data-state="tx" class="tx">r</li>
-            <li data-state="ut" class="ut">s</li>
-            <li data-state="va" class="va">t</li>
-            <li data-state="vt" class="vt">u</li>     
-            <li data-state="wa" class="wa">v</li>
-            <li data-state="wv" class="wv">w</li>
-            <li data-state="wi" class="wi">x</li>
-            <li data-state="wy" class="wy">y</li> 
-          </ul>
-        </div>
-        
-    
-      </div>
-    
-    
-      <div class="reveal" id="exampleModal1" data-reveal>
-        <h1>About</h1>
-        
-            <p>The database includes over 300 agencies that have provided internships for students in Rehabilitation and Human Services. If you are looking for a particular site and it is not found in this database, this does not necessarily mean that it is not an appropriate site, only that the site was not listed in our current files. Students should remember that the Internship Coordinator must approve all internship sites regardless of whether the agency has been used in the past.</p>
-    
-            <p>Please note, that although the supervisor's name is listed, it may not be accurate due to turnovers in agencies. We strive to keep the records as updated as we can, but if an agency has not hosted an intern recently some data may be outdated.</p>
-    
-            <p>The deadlines for internship paperwork to be turned in are as follows:<br><br>
-    
-            Fall semester: July 1st* <br>
-            Spring semester: November 1st* <br>
-            Summer semester: April 1st* <br></p>
-    
-            <p>*Paperwork turned in after these deadlines will result in a one-letter grade deduction for the internship experience.</p>
-        <button class="close-button" data-close aria-label="Close modal" type="button">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    
-     <hr id="endresults">
+    </div>
 
-    <script src="assets/js/app.js"></script>
+
+
+    <div class="row callout secondary filter">
+        <div class="input-group">
+            <span class="input-group-label">Search</span>
+            <!-- <input class="input-group-field" type="text"> -->
+            <input type="text" ng-model="query" placeholder="by agency, description, etc..." class="input-group-field" />
+            
+        </div>
+
+        <h4 class="subheader">States
+
+                <a ng-show="toggleStates" ng-click="toggleStatesFilter()">+</a>
+                <a ng-hide="toggleStates" ng-click="toggleStatesFilter()">-</a>
+
+        </h4>
+        <div class="columns large-12" ng-hide="toggleStates">
+            <div class="row">
+                <div class="columns large-9" style="-webkit-column-count: 5; -moz-column-count: 5; column-count: 5;">
+                    <div ng-repeat="state in stateGroup.slice(1)">
+
+                        <br>
+                        <div class="tiny switch">
+                            <input class="switch-input"  type="checkbox" ng-model="useStates[state]" name="checkbox{{state}}" id="checkbox{{state}}"  /> 
+                            <label class="switch-paddle" for="checkbox{{state}}">
+                                <span class="show-for-sr">{{state}}</span>
+
+                                <span class="switch-active"   aria-hidden="true">{{state}}</span>
+                                <span class="switch-inactive" aria-hidden="true">{{state}}</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns large-3">
+                    <ul class="stately">
+                        <li ng-class="{green: useStates['AL']===true }" data-state="al" id="al">A</li> 
+                        <li ng-class="{green: useStates['AK']===true }" data-state="ak" id="ak">B</li> 
+                        <li ng-class="{green: useStates['AR']===true }" data-state="ar" id="ar">C</li> 
+                        <li ng-class="{green: useStates['AZ']===true }" data-state="az" id="az">D</li> 
+                        <li ng-class="{green: useStates['CA']===true }" data-state="ca" id="ca">E</li> 
+                        <li ng-class="{green: useStates['CO']===true }" data-state="co" id="co">F</li> 
+                        <li ng-class="{green: useStates['CT']===true }" data-state="ct" id="ct">G</li> 
+                        <li ng-class="{green: useStates['DE']===true }" data-state="de" id="de">H</li> 
+                        <li ng-class="{green: useStates['DC']===true }" data-state="dc" id="dc">I</li> 
+                        <li ng-class="{green: useStates['FL']===true }" data-state="fl" id="fl">J</li> 
+                        <li ng-class="{green: useStates['GA']===true }" data-state="ga" id="ga">K</li> 
+                        <li ng-class="{green: useStates['HI']===true }" data-state="hi" id="hi">L</li> 
+                        <li ng-class="{green: useStates['ID']===true }" data-state="id" id="id">M</li> 
+                        <li ng-class="{green: useStates['IL']===true }" data-state="il" id="il">N</li> 
+                        <li ng-class="{green: useStates['IN']===true }" data-state="in" id="in">O</li> 
+                        <li ng-class="{green: useStates['IA']===true }" data-state="ia" id="ia">P</li> 
+                        <li ng-class="{green: useStates['KS']===true }" data-state="ks" id="ks">Q</li> 
+                        <li ng-class="{green: useStates['KY']===true }" data-state="ky" id="ky">R</li> 
+                        <li ng-class="{green: useStates['LA']===true }" data-state="la" id="la">S</li> 
+                        <li ng-class="{green: useStates['ME']===true }" data-state="me" id="me">T</li> 
+                        <li ng-class="{green: useStates['MD']===true }" data-state="md" id="md">U</li> 
+                        <li ng-class="{green: useStates['MA']===true }" data-state="ma" id="ma">V</li> 
+                        <li ng-class="{green: useStates['MI']===true }" data-state="mi" id="mi">W</li> 
+                        <li ng-class="{green: useStates['MN']===true }" data-state="mn" id="mn">X</li> 
+                        <li ng-class="{green: useStates['MS']===true }" data-state="ms" id="ms">Y</li> 
+                        <li ng-class="{green: useStates['MO']===true }" data-state="mo" id="mo">Z</li> 
+                        <li ng-class="{green: useStates['MT']===true }" data-state="mt" id="mt">a</li> 
+                        <li ng-class="{green: useStates['NE']===true }" data-state="ne" id="ne">b</li> 
+                        <li ng-class="{green: useStates['NV']===true }" data-state="nv" id="nv">c</li> 
+                        <li ng-class="{green: useStates['NH']===true }" data-state="nh" id="nh">d</li> 
+                        <li ng-class="{green: useStates['NJ']===true }" data-state="nj" id="nj">e</li> 
+                        <li ng-class="{green: useStates['NM']===true }" data-state="nm" id="nm">f</li> 
+                        <li ng-class="{green: useStates['NY']===true }" data-state="ny" id="ny">g</li> 
+                        <li ng-class="{green: useStates['NC']===true }" data-state="nc" id="nc">h</li> 
+                        <li ng-class="{green: useStates['ND']===true }" data-state="nd" id="nd">i</li> 
+                        <li ng-class="{green: useStates['OH']===true }" data-state="oh" id="oh">j</li> 
+                        <li ng-class="{green: useStates['OK']===true }" data-state="ok" id="ok">k</li> 
+                        <li ng-class="{green: useStates['OR']===true }" data-state="or" id="or">l</li> 
+                        <li ng-class="{green: useStates['PA']===true }" data-state="pa" id="pa">m</li> 
+                        <li ng-class="{green: useStates['RI']===true }" data-state="ri" id="ri">n</li> 
+                        <li ng-class="{green: useStates['SC']===true }" data-state="sc" id="sc">o</li> 
+                        <li ng-class="{green: useStates['SD']===true }" data-state="sd" id="sd">p</li> 
+                        <li ng-class="{green: useStates['TN']===true }" data-state="tn" id="tn">q</li> 
+                        <li ng-class="{green: useStates['TX']===true }" data-state="tx" id="tx">r</li> 
+                        <li ng-class="{green: useStates['UT']===true }" data-state="ut" id="ut">s</li> 
+                        <li ng-class="{green: useStates['VA']===true }" data-state="va" id="va">t</li> 
+                        <li ng-class="{green: useStates['VT']===true }" data-state="vt" id="vt">u</li> 
+                        <li ng-class="{green: useStates['WA']===true }" data-state="wa" id="wa">v</li> 
+                        <li ng-class="{green: useStates['WV']===true }" data-state="wv" id="wv">w</li> 
+                        <li ng-class="{green: useStates['WI']===true }" data-state="wi" id="wi">x</li> 
+                        <li ng-class="{green: useStates['WY']===true }" data-state="wy" id="wy">y</li> 
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <h4 class="subheader">Counties 
+            <span ng-show="countyGroup.length">
+                <a ng-if="showCounties" ng-show="toggleCounties" ng-click="toggleCountiesFilter()">+</a>
+                <a ng-if="showCounties" ng-hide="toggleCounties" ng-click="toggleCountiesFilter()">-</a>
+            </span>
+        </h4>
+        <div class="columns large-12" style="-webkit-column-count: 3; -moz-column-count: 3; column-count: 3;" class="hiddenDiv" ng-hide="toggleCounties">
+            <div ng-if="!showCounties">
+                Please select a state first
+            </div>
+            <div ng-hide="countyGroup.length">No counties available</div>
+            <div ng-if="showCounties">
+                <div ng-repeat="county in countyGroup">
+                    <b><input type="checkbox" ng-model="useCounties[county]"/> {{county}}</b>
+
+                </div>
+            </div>
+        </div>
+
+        <h4 class="subheader">Types 
+            <a ng-show="toggleTypes" ng-click="toggleTypesFilter()">+</a>
+            <a ng-hide="toggleTypes" ng-click="toggleTypesFilter()">-</a>
+        </h4>
+        <div class="columns large-12" style="-webkit-column-count: 3; -moz-column-count: 3; column-count: 3;" ng-hide="toggleTypes">
+            <div ng-repeat="(title, type) in types" >
+                <b><input type="checkbox" ng-model="useTypes[type]"/> {{title}}</b>
+
+            </div>
+
+        </div>
+ 
+    </div>
+
+<div class="row internship" ng-repeat="internship in filteredInternships.slice(0) | filter:query track by internship.id "  ng-class-even="'even'">
+
+    <div class="large-9 columns ">
+        <div class="row ">
+
+            <ul class="large-5 columns no-bullet">
+                <li ng-if="internship.URL.length > 0"><strong>Agency:</strong> <a href="{{internship.URL}}" target="_blank">{{ internship.facility }}</a></li>
+                <li ng-if="internship.url.length === 0"><strong>Agency:</strong> {{ internship.facility }}</li>
+              
+                <li><strong>Supervisor:</strong> {{ internship.supervisor }}</li>
+                <li><strong>County:</strong> {{ internship.county }}</li>
+                <li>
+                    <address>
+                        {{ internship.street }}<br>
+                        {{ internship.city}} {{internship.state}}, {{internship.zip}}
+                    </address>
+                </li>
+                <li><a href="tel:{{internship.phone}}"><strong><i class="fa fa-phone-square" aria-hidden="true"></i></strong> {{internship.phone}} </a></li>
+                <li><a href="mailto:{{internship.email}}"><strong><i class="fa fa-envelope" aria-hidden="true"></i></strong> {{internship.email}}</a></li>
+          </ul>
+              
+            <div class="large-7 columns align-self-bottom" >
+                <!-- <h2>{{ internship.id }}</h2> -->
+                <span ng-if="internship.adolescents" class="secondary label">Adolescents</span>
+                <span ng-if="internship.bv" class="secondary label">BV</span>
+                <span ng-if="internship.counseling" class="secondary label">Counseling</span>
+                <span ng-if="internship.elderly" class="secondary label">Elderly</span>
+                <span ng-if="internship.mr" class="secondary label">MR</span>
+                <span ng-if="internship.private" class="secondary label">Private</span>
+                <span ng-if="internship.student" class="secondary label">Student</span>
+                <span ng-if="internship.adult" class="secondary label">Adult</span>
+                <span ng-if="internship.children" class="secondary label">Children</span>
+                <span ng-if="internship.cp" class="secondary label">CP</span>
+                <span ng-if="internship.family" class="secondary label">Family</span>
+                <span ng-if="internship.neuro" class="secondary label">Neuro</span>
+                <span ng-if="internship.physical" class="secondary label">Physical</span>
+                <span ng-if="internship.vi" class="secondary label">VI</span>
+                <span ng-if="internship.women" class="secondary label">Women</span>
+                <span ng-if="internship.alternative_education" class="secondary label">Alternative Education</span>
+                <span ng-if="internship.corrections" class="secondary label">Corrections</span>
+                <span ng-if="internship.d/A" class="secondary label">D/A</span>
+                <span ng-if="internship.mh" class="secondary label">MH</span>
+                <span ng-if="internship.ot/PT" class="secondary label">OT/PT</span>
+                <span ng-if="internship.rehab" class="secondary label">Rehab</span>
+                <span ng-if="internship.voc" class="secondary label">Voc</span>
+            
+                <p>
+                  {{internship.description}}  
+                </p>
+      
+            </div>
+        </div>
+    </div>
+    
+    <div class="large-3 columns align-self-middle text-center">
+        <span class="state">{{stateConvertion[internship.state]}}</span>
+
+    </div>
+
+
+
+    </div>
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
   </body>
 </html>
