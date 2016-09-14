@@ -35,7 +35,7 @@ angular.module('myApp', [])
     $scope.internships = [];
     $scope.showCounties = false;
 
-    $http.get('http://ed.psu.edu/rest/data/crudService').success(function(data) {
+    $http.get('https://ed.psu.edu/rest/data/crudService').success(function(data) {
 
         // $scope.internships = data.DATA;
         // $scope.orderby = 'ID';
