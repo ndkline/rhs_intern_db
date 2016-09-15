@@ -5,8 +5,8 @@
         <link rel="stylesheet" href="css/foundation.css">
         <link rel="stylesheet" href="css/stately.css">
 
-            <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+        <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
     
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script> -->
@@ -41,6 +41,14 @@
                 margin-top: 25px;
             }
 
+            .top-bar, .top-bar ul{
+                background-color: #2D4660;
+            }
+            body > div.top-bar > div.top-bar-right > ul > li > a{
+                color: #9d9d9d;
+
+            }
+
         </style>
 
 </head>
@@ -49,7 +57,7 @@
         <div class="top-bar-left">
             <ul class="dropdown menu" data-dropdown-menu>
 
-                    <a href="https://ed.psu.edu" target="_blank"><img src="images/psu_logo.png" width="150"></a>
+                    <a href="https://ed.psu.edu" target="_blank"><img src="http://ed.psu.edu/converge/psulogo.png" width="200"></a>
 
       
             </ul>
@@ -79,18 +87,21 @@
         </h4>
         <div class="columns large-12" ng-hide="toggleStates">
             <div class="row">
-                <div class="columns large-9" style="-webkit-column-count: 5; -moz-column-count: 5; column-count: 5;">
-                    <div ng-repeat="state in stateGroup.slice(1)">
+                <div class="columns large-9" >
+                    <div class="row">
+                        
+                        <div ng-repeat="state in stateGroup.slice(1)" class="columns large-3" ng-class="{'end':$last}">
 
-                        <br>
-                        <div class="tiny switch">
-                            <input class="switch-input"  type="checkbox" ng-model="useStates[state]" name="checkbox{{state}}" id="checkbox{{state}}"  /> 
-                            <label class="switch-paddle" for="checkbox{{state}}">
-                                <span class="show-for-sr">{{state}}</span>
+                            <br>
+                            <div class="tiny switch">
+                                <input class="switch-input"  type="checkbox" ng-model="useStates[state]" ng-checked="state=='PA'" name="checkbox{{state}}" id="checkbox{{state}}"  /> 
+                                <label class="switch-paddle" for="checkbox{{state}}">
+                                    <span class="show-for-sr">{{state}}</span>
 
-                                <span class="switch-active"   aria-hidden="true">{{state}}</span>
-                                <span class="switch-inactive" aria-hidden="true">{{state}}</span>
-                            </label>
+                                    <span class="switch-active"   aria-hidden="true">{{state}}</span>
+                                    <span class="switch-inactive" aria-hidden="true">{{state}}</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -210,28 +221,28 @@
               
             <div class="large-7 columns align-self-bottom" >
                 <!-- <h2>{{ internship.id }}</h2> -->
-                <span ng-if="internship.adolescents" class="secondary label">Adolescents</span>
-                <span ng-if="internship.bv" class="secondary label">BV</span>
-                <span ng-if="internship.counseling" class="secondary label">Counseling</span>
-                <span ng-if="internship.elderly" class="secondary label">Elderly</span>
-                <span ng-if="internship.mr" class="secondary label">MR</span>
-                <span ng-if="internship.private" class="secondary label">Private</span>
-                <span ng-if="internship.student" class="secondary label">Student</span>
-                <span ng-if="internship.adult" class="secondary label">Adult</span>
-                <span ng-if="internship.children" class="secondary label">Children</span>
-                <span ng-if="internship.cp" class="secondary label">CP</span>
-                <span ng-if="internship.family" class="secondary label">Family</span>
-                <span ng-if="internship.neuro" class="secondary label">Neuro</span>
-                <span ng-if="internship.physical" class="secondary label">Physical</span>
-                <span ng-if="internship.vi" class="secondary label">VI</span>
-                <span ng-if="internship.women" class="secondary label">Women</span>
-                <span ng-if="internship.alternative_education" class="secondary label">Alternative Education</span>
-                <span ng-if="internship.corrections" class="secondary label">Corrections</span>
-                <span ng-if="internship.d/A" class="secondary label">D/A</span>
-                <span ng-if="internship.mh" class="secondary label">MH</span>
-                <span ng-if="internship.ot/PT" class="secondary label">OT/PT</span>
-                <span ng-if="internship.rehab" class="secondary label">Rehab</span>
-                <span ng-if="internship.voc" class="secondary label">Voc</span>
+                <span ng-if="internship.adolescents" class=" label">Adolescents</span>
+                <span ng-if="internship.bv" class=" label">BV</span>
+                <span ng-if="internship.counseling" class=" label">Counseling</span>
+                <span ng-if="internship.elderly" class=" label">Elderly</span>
+                <span ng-if="internship.mr" class=" label">MR</span>
+                <span ng-if="internship.private" class=" label">Private</span>
+                <span ng-if="internship.student" class=" label">Student</span>
+                <span ng-if="internship.adult" class=" label">Adult</span>
+                <span ng-if="internship.children" class=" label">Children</span>
+                <span ng-if="internship.cp" class=" label">CP</span>
+                <span ng-if="internship.family" class=" label">Family</span>
+                <span ng-if="internship.neuro" class=" label">Neuro</span>
+                <span ng-if="internship.physical" class=" label">Physical</span>
+                <span ng-if="internship.vi" class=" label">VI</span>
+                <span ng-if="internship.women" class=" label">Women</span>
+                <span ng-if="internship.alternative_education" class=" label">Alternative Education</span>
+                <span ng-if="internship.corrections" class=" label">Corrections</span>
+                <span ng-if="internship.d/A" class=" label">D/A</span>
+                <span ng-if="internship.mh" class=" label">MH</span>
+                <span ng-if="internship.ot/PT" class=" label">OT/PT</span>
+                <span ng-if="internship.rehab" class=" label">Rehab</span>
+                <span ng-if="internship.voc" class=" label">Voc</span>
             
                 <p>
                   {{internship.description}}  
