@@ -1,7 +1,8 @@
 <!doctype html>
 <html ng-app="myApp">
     <head>
-    
+        <title>Internship DB</title>
+
         <link rel="stylesheet" href="css/foundation.css">
         <link rel="stylesheet" href="css/stately.css">
 
@@ -211,9 +212,12 @@
         <div class="row ">
 
             <ul class="large-5 columns no-bullet">
-                <li ng-if="internship.URL.length > 0"><strong>Agency:</strong> <a href="{{internship.URL}}" target="_blank">{{ internship.facility }}</a></li>
-                <li ng-if="internship.url.length === 0"><strong>Agency:</strong> {{ internship.facility }}</li>
-              
+                <li ng-if="internship.url.length > 0"><strong>Agency:</strong> <a href="{{internship.url}}" target="_blank">{{ internship.facility }}</a></li>
+                <li ng-if="internship.url.length == 0"><strong>Agency:</strong> {{ internship.facility }}</li>
+                
+                <!-- <li>Facility: {{ internship.facility }}</li>
+                <li>URL: {{ internship.url }}</li> -->
+
                 <li><strong>Supervisor:</strong> {{ internship.supervisor }}</li>
                 <li><strong>County:</strong> {{ internship.county }}</li>
                 <li>
