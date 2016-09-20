@@ -10,6 +10,8 @@
         <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
     
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script src="https://use.fontawesome.com/7361433a98.js"></script>
+
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script> -->
         <script src="app.js"></script>
 
@@ -205,6 +207,14 @@
  
     </div>
 
+<!-- <div class="row">
+    <div class="large-12 columns text-center">
+        <h4>Please Select Search Criteria Above</h4>
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw" ng-show="!query"></i>
+        <span class="sr-only" ng-show="!query">Loading...</span>
+    </div>
+</div>
+ -->
 <div class="row internship" ng-repeat="internship in filteredInternships.slice(0) | filter:query track by internship.id "  ng-class-even="'even'">
 
     <div class="large-9 columns ">
