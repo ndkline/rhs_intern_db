@@ -14,7 +14,7 @@ var uniqueItems = function (data, key) {
 angular.module('myApp', [])
   .controller('MyCtrl', function($scope, filterFilter, $http) {
 
-    $scope.toggleStates = false;
+    $scope.toggleStates = true;
     $scope.toggleStatesFilter = function() {
         $scope.toggleStates = $scope.toggleStates === false ? true : false;
     }
@@ -382,6 +382,7 @@ angular.module('myApp', [])
     }, true);
     
     
+        
     $scope.$watch('filtered', function (newValue) {
         if (angular.isArray(newValue)) {
             console.log(newValue.length);

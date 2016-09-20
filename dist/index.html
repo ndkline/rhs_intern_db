@@ -102,7 +102,7 @@
 
                             <br>
                             <div class="tiny switch">
-                                <input class="switch-input"  type="checkbox" ng-model="useStates[state]" ng-checked="state=='PA'" name="checkbox{{state}}" id="checkbox{{state}}"  /> 
+                                <input class="switch-input"  type="checkbox" ng-model="useStates[state]" name="checkbox{{state}}" id="checkbox{{state}}"  /> 
                                 <label class="switch-paddle" for="checkbox{{state}}">
                                     <span class="show-for-sr">{{state}}</span>
 
@@ -231,30 +231,30 @@
               
             <div class="large-7 columns align-self-bottom" >
                 <!-- <h2>{{ internship.id }}</h2> -->
-                <span ng-if="internship.adolescents" class=" label">Adolescents</span>
-                <span ng-if="internship.adult" class=" label">Adult</span>
-                <span ng-if="internship.bv" class=" label">Blindness & Visual Impairment</span>
-                <span ng-if="internship.counseling" class=" label">Counseling</span>
-                <span ng-if="internship.elderly" class=" label">Elderly</span>
-                <span ng-if="internship.mr" class=" label">MR</span>
-                <span ng-if="internship.private" class=" label">Private</span>
-                <span ng-if="internship.student" class=" label">Student</span>
-                <span ng-if="internship.children" class=" label">Children</span>
-                <span ng-if="internship.cp" class=" label">Cerebral Palsy</span>
-                <span ng-if="internship.family" class=" label">Family</span>
-                <span ng-if="internship.neuro" class=" label">Neurological Impairment</span>
-                <span ng-if="internship.physical" class=" label">Physical Disability</span>
-                <span ng-if="internship.intdis" class=" label">Intellectual Disability</span>
-                <span ng-if="internship.vi" class=" label">VI</span>
-                <span ng-if="internship.women" class=" label">Women</span>
-                <span ng-if="internship.alternative_education" class=" label">Alternative Education</span>
-                <span ng-if="internship.corrections" class=" label">Corrections</span>
-                <span ng-if="internship.d_a" class=" label">Drug and Alcohol</span>
-                <span ng-if="internship.mh" class=" label">Mental Health</span>
-                <span ng-if="internship.ot_pt" class=" label">Occupational Therapy/ Physical Therapy</span>
-                <span ng-if="internship.rehab" class=" label">Rehab</span>
-                <span ng-if="internship.voc" class=" label">Vocational Rehabilitation</span>
-                <span ng-if="internship.il" class=" label">Independent Living</span>
+                <span ng-if="internship.adolescents" class="label">Adolescents</span>
+                <span ng-if="internship.adult" class="label">Adult</span>
+                <span ng-if="internship.bv" class="label">Blindness & Visual Impairment</span>
+                <span ng-if="internship.counseling" class="label">Counseling</span>
+                <span ng-if="internship.elderly" class="label">Elderly</span>
+                <span ng-if="internship.mr" class="label">MR</span>
+                <span ng-if="internship.private" class="label">Private</span>
+                <span ng-if="internship.student" class="label">Student</span>
+                <span ng-if="internship.children" class="label">Children</span>
+                <span ng-if="internship.cp" class="label">Cerebral Palsy</span>
+                <span ng-if="internship.family" class="label">Family</span>
+                <span ng-if="internship.neuro" class="label">Neurological Impairment</span>
+                <span ng-if="internship.physical" class="label">Physical Disability</span>
+                <span ng-if="internship.intdis" class="label">Intellectual Disability</span>
+                <span ng-if="internship.vi" class="label">VI</span>
+                <span ng-if="internship.women" class="label">Women</span>
+                <span ng-if="internship.alternative_education" class="label">Alternative Education</span>
+                <span ng-if="internship.corrections" class="label">Corrections</span>
+                <span ng-if="internship.d_a" class="label">Drug and Alcohol</span>
+                <span ng-if="internship.mh" class="label">Mental Health</span>
+                <span ng-if="internship.ot_pt" class="label">Occupational Therapy/ Physical Therapy</span>
+                <span ng-if="internship.rehab" class="label">Rehab</span>
+                <span ng-if="internship.voc" class="label">Vocational Rehabilitation</span>
+                <span ng-if="internship.il" class="label">Independent Living</span>
 
                 <p>
                   {{internship.description}}  
@@ -274,6 +274,15 @@
     </div>
 
     <script src="js/vendor/jquery.js"></script>
+    <script type="text/javascript">
+        $( document ).ready(function() {
+
+            $("#checkboxPA input:checkbox").prop("checked", true);
+        });
+
+
+
+    </script>
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
   </body>
