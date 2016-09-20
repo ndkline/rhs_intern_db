@@ -107,11 +107,11 @@ angular.module('myApp', [])
             'Neurological Impairment':"ni",
             'Intellectual Disability ': "intdis",
             'Neurological Impairment': "neuro",
-            'OT/PT': "ot_pt",
+            'Occupational Therapy/ Physical Therapy': "ot_pt",
             'Physical Disability': "physical",
             'Independent Living': "il",
             'Student': "student",
-            'Voc': "voc",
+            'Vocational Rehabilitation': "voc",
             'Women': "women"
         };
 
