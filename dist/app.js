@@ -92,6 +92,7 @@ angular.module('myApp', [])
         var filterAfterStates = [];        
         var filterAfterCounties = [];      
 
+        // Client Populations and Disability Types
         $scope.types = {
             'Adolescents': "adolescents",
             'Adult': "adult",
